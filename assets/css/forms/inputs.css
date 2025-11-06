@@ -1,0 +1,59 @@
+.input-wrapper {
+    .input-inner {
+        display: flex;
+        gap: 1rem;
+        label {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
+            input[type="text"],
+            input[type="date"],
+            textarea {
+                all: unset;
+                height: 3rem;
+                border-radius: .5rem;
+                background-color: var(--input-base);
+                border: 1px solid var(--input-stroke);
+                padding-inline: 1rem;
+                font: var(--body-md);
+            }
+
+            & > input[type="text"],
+            & > input[type="date"],
+            & > textarea {
+                margin-bottom: 1rem;
+            }
+
+        }
+    }
+
+    .radio-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .radio-inner .radios {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        position: relative;
+        & input:first-child {
+            margin-top: 0.75rem;
+        }
+        input {
+            all: unset;
+            border: 1px solid var(--input-stroke);
+            height: 49px;
+            min-width: 6rem;
+        }
+        
+    }
+    
+    span {
+        font: var(--body-xs);
+        color: var(--text-body);
+        margin-bottom: 0.75rem;
+    }
+}
+

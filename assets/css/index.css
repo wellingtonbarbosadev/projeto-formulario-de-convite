@@ -1,2 +1,74 @@
 @import url(global.css);
 @import url(layouts.css);
+@import url(forms/inputs.css);
+
+main {
+    & > aside {
+        padding: 2rem;
+        background: url(../img/Background.png) no-repeat center/cover;
+
+        width: 25rem;
+        height: 45.5rem;
+        border-radius: 0.625rem;
+
+        overflow-y: hidden;
+        
+        h1 {
+            font: var(--font-logo);
+            color: var(--pink);
+        }
+
+        p {
+            font: var(--body-md);
+            color: var(--text-heading);
+            font-weight: lighter;
+        }
+
+        img {
+            height: 3rem;
+        }
+
+    }
+
+    & > #main {
+        width: 100%;
+        max-width: 51.25rem;
+        background-color: var(--shape-body);
+        border-radius: 0.625rem;
+        padding-block: 5rem;
+
+        .container {
+            width: 100%;
+            max-width: 35rem;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        h2 {
+            font: var(--heading-md);
+            color: var(--text-heading);
+            margin-bottom: 3rem;
+        }
+
+        fieldset {
+            legend {
+                font: var(--heading-sm);
+                color: var(--text-heading);
+                margin-bottom: 1.5rem;
+                display: flex;
+                gap: .75rem;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    mask: url(../icons/calendar.svg) no-repeat center/contain;
+                    background-color: var(--input-placeholder);
+                }
+            }
+
+
+        }
+
+    }
+}

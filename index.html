@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festivite</title>
-    <link rel="stylesheet" href="assets/css/index.css">
-</head>
-<body>
-    <main>
-        <section id="main">
-            <h2>Crie o seu convite</h2>
-            <fieldset>
-                <legend>Sobre o evento</legend>
-            </fieldset>
-        </section>
 
-        <aside>
-            <img src="assets/icons/Logo.svg" alt="">
-            <h1>Festivite</h1>
-            <p>Crie um convite digital para o seu evento</p>
-        </aside>
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <title>Festivite</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+  <main>
+    <section id="main">
+      <div class="container">
+        <h2>Crie o seu convite</h2>
+        <form action="">
+          <fieldset>
+            <legend>Sobre o evento</legend>
+
+            <div class="input-wrapper">
+              <div class="input-inner">
+                <label>
+                  <span>Titulo</span>
+                  <input type="text" name="event-name" placeholder="Nome do evento">
+                </label>
+              </div>
+              <div class="input-inner">
+                <label>
+                  <span>Início</span>
+                  <input type="date" name="event-date-initial" placeholder="Data do evento">
+                </label>
+
+                <label>
+                  <span>Fim</span>
+                  <input type="date" name="event-date-final" placeholder="Data do evento">
+                </label>
+              </div>
+              <div class="radio-inner input-inner">
+                <div>
+                    <span>Tipo</span>
+                    <div class="radios">
+                      <label>
+                        <input type="radio" name="event-type" value="presencial" checked>
+                        Presencial
+                      </label>
+                      <label>
+                        <input type="radio" name="event-type" value="online">
+                        Online
+                      </label>
+                    </div>
+                </div>
+                <div>
+                  <label>
+                    <span>Local</span>
+                    <input type="text" name="Local" id="local-event" placeholder="Link ou endereço">
+                  </label>
+                </div>
+              </div>
+              <div class="input-inner textarea-inner">
+                <span>Descrição</span>
+                <textarea name="event-desc" id="event-desc" placeholder="Escreva os detalhes do evento"></textarea>
+              </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <aside>
+      <img src="assets/icons/Logo.svg" alt="">
+      <h1>Festivite</h1>
+      <p>Crie um convite digital para o seu evento</p>
+    </aside>
+  </main>
 </body>
+
 </html>
