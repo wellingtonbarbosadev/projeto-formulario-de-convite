@@ -62,8 +62,19 @@ main {
                     display: block;
                     width: 1.5rem;
                     height: 1.5rem;
-                    mask: url(../icons/calendar.svg) no-repeat center/contain;
                     background-color: var(--input-placeholder);
+                }
+
+                &.about_event::before {
+                    mask: url(../icons/calendar.svg) no-repeat center/contain;
+                }
+
+                &.info_contact::before {
+                    mask: url(../icons/contact.svg) no-repeat center/contain;
+                }
+                
+                &.personalization::before {
+                    mask: url(../icons/paintbrush-vertical.svg) no-repeat center/contain;
                 }
             }
 
