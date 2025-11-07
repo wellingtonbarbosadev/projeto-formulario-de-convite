@@ -1,3 +1,20 @@
+label {
+    color: var(--text-heading);
+}
+input[type="date"] {
+    &::-webkit-calendar-picker-indicator {
+        opacity: 0;
+
+    }
+    
+    &::-webkit-datetime-edit {
+        color: var(--input-placeholder);
+    }
+    color: var(--text-heading);
+}
+
+
+
 .input-wrapper {
     .input-inner {
         display: flex;
@@ -11,12 +28,27 @@
             input[type="date"],
             textarea {
                 all: unset;
+                transition: .3s;
                 height: 3rem;
                 border-radius: .5rem;
                 background-color: var(--input-base);
                 border: 1px solid var(--input-stroke);
                 padding-inline: 1rem;
                 font: var(--body-md);
+                cursor: text;
+
+                &::placeholder {
+                    color: var(--input-placeholder);
+                }
+
+                &:focus,
+                &:focus-within {
+                    border-color: var(--brand-light);
+                }
+            }
+
+            input[type="date"] {
+                cursor: pointer;
             }
 
             & > input[type="text"],
@@ -31,23 +63,88 @@
     .radio-inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 
     .radio-inner .radios {
         display: flex;
-        gap: 1rem;
-        width: 100%;
-        position: relative;
-        & input:first-child {
-            margin-top: 0.75rem;
-        }
-        input {
-            all: unset;
-            border: 1px solid var(--input-stroke);
-            height: 49px;
-            min-width: 6rem;
-        }
+        margin-top: 0.75rem;
+        background-color: var(--input-base);
+        border: 1px solid var(--input-stroke);
+        border-radius: 0.5rem;
+        max-height: 3rem;
         
+        label {
+            all: unset;
+            transition: .3s;
+            max-height: 2.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            margin: .25rem;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            cursor: pointer;
+            flex: 1;
+            width: 100%;
+            color: var(--text-heading);
+            font: var(--body-sm);
+
+
+            &:has(:checked),
+            &:has(:focus-within),
+            &:has(:focus) {
+                background-color: var(--input-stroke);
+                color: var(--text-heading);
+                img {
+                    background-color: var(--brand-light);
+                }
+
+                input[type="radio"]::before {
+                    background-color: var(--brand-light);
+                }
+            }
+            
+            input[type="radio"] {
+                all: unset;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 1rem;
+                    height: 1rem;
+                    mask: url(../../icons/building-2.svg) no-repeat center/contain;
+                    background-color: var(--text-body);
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+    
+    .textarea-inner {
+        flex-direction: column;
+        gap: 0;
+        
+        textarea {
+            transition: .3s;
+            padding: 1rem;
+            color: var(--text-heading);
+            border: 1px solid var(--input-stroke);
+            background-color: var(--input-base);
+            outline: none;
+            border-radius: .5rem;
+            height: 8.5rem;
+            resize: none;
+            font: var(--body-md);
+
+            &:focus,
+            &:focus-within {
+                border-color: var(--brand-light);
+                
+            }
+        }
     }
     
     span {
@@ -56,4 +153,5 @@
         margin-bottom: 0.75rem;
     }
 }
+
 
